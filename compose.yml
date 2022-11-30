@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: postgres_container
+    restart: unless-stopped
+    image: docker.io/postgres:latest
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD-MyAwesomePostgresPassword}
+      POSTGRES_USER: ${POSGRES_USER-user}
+      POSTGRES_DB: ${POSTGRES_DB-workplace_is}
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: docker.io/adminer:latest
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+
+
+volumes:
+  db:

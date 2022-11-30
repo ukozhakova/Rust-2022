@@ -1,0 +1,2 @@
+-- Here goes your database schema. Model it after your physical ERD from
+-- task 1.

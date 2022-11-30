@@ -1,0 +1,10 @@
+[package]
+name = "database-showcase"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# This is how to include a local dependency
+database-layer = { path="../database-layer", version = "1.0" }
+dotenvy = "0.15.6"
